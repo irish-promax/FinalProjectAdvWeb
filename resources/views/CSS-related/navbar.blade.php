@@ -63,9 +63,7 @@
 
             <section class="about section-padding" id="section_2">
                 <div class="container">
-                    <div class="row">
-
-                       
+                    <div class="row">            
 
                     </div>
                 </div>
