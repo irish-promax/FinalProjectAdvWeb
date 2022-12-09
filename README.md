@@ -1,4 +1,4 @@
-<br>CSEB5123 
+CSEB5123 
 <br>Advanced Web Application Development 
 <br>Semester 1 2022/2023 
 <br>Final Project
@@ -24,5 +24,6 @@ In a common setup, the FYP coordinator will create a project and assign to stude
 <br>Assessment:
     <br>1. This shall be an individual project.
     <br>2. You are given 2 weeks to complete the project.
-    <br>3. Project presentation will be done during the examination week. Time slot will be provided. 4. Assessment will be based <br>on the given rubric.
+    <br>3. Project presentation will be done during the examination week. Time slot will be provided. 
+    <br>4. Assessment will be based on the given rubric.
     <br>5. The project contributes 40% from the overall assessment.
