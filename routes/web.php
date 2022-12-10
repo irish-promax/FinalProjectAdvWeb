@@ -18,7 +18,10 @@ Route::get('/', function () {
     return view('home');
 });
 
-Route::view("/registerpage",'admin/registerpage');
+Route::get("/registerpage",[homeControl::class,"adminregister"]);
+Route::POST("/add",[homeControl::class,'addData']);
+
+Route::get("/viewproject",[homeControl::class,"user"]);
 
 Route::middleware([
     'auth:sanctum',

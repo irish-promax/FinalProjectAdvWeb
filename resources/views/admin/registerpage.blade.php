@@ -94,67 +94,74 @@
 
         <center>
             <h1 style="font-weight:bold; font-size:50px; color:#023273">Final Year Project Management System</h1>
-        </center>
-
+            </center>
         <div style="margin:40px 80px 80px 80px;">
-            <form action="/action_page.php">
-
+            <form action = "/add" method="POST">
+                @csrf
                 <h3 style=" font-size:25px">Project Title</H3>
-                <input type="text" id="fname" name="pname" placeholder="Enter project title here" required>
+                <input type="text"  name="pname" placeholder="Enter project title here" required>
+                <br>
+                <br>
+                <h3 style=" font-size:25px">Student Name</H3>
+                <input type="text"  name="sname" placeholder="Enter student name here" required>
+                <br>
+                <br>
+                <h3 style=" font-size:25px">Student ID</H3>
+                <input type="text"  name="sid" placeholder="Enter student ID here" required>
                 
                 <br>
                 <br>
                 <h3 style=" font-size:25px">Supervisor</H3>
-                <select id="country" name="Supervisor" required>
-                    <option value="Milestone 1">Milestone 1</option>
-                    <option value="Milestone 2">Milestone 2</option>
-                    <option value="Final Report">Final Report</option>
+                <select name="supervisor" required>
+                @foreach($data as $data)
+                        <option value='{{$data->id}}'>{{$data->name}}</option>
+                        @endforeach
                 </select><br>
 
                 <br>
+                <br>
                 <h3 style=" font-size:25px">Examiner 1</H3>
-                <select id="country" name="Examiner1" required>
-                    <option value="Milestone 1">Milestone 1</option>
-                    <option value="Milestone 2">Milestone 2</option>
-                    <option value="Final Report">Final Report</option>
-                </select>
+                <select name="examiner1" required>
+                @foreach($data1 as $data1)
+                        <option value='{{$data1->id}}'>{{$data1->name}}</option>
+                        @endforeach
+                </select><br>
 
                 <br>
                 <br>
                 <h3 style=" font-size:25px">Examiner 2</H3>
-                <select id="country" name="Examiner2" required>
-                    <option value="Milestone 1">Milestone 1</option>
-                    <option value="Milestone 2">Milestone 2</option>
-                    <option value="Final Report">Final Report</option>
-                </select>
+                <select name="examiner2" required>
+                @foreach($data2 as $data2)
+                        <option value="{{$data2->id}}">{{$data2->name}}</option>
+                        @endforeach
+                </select><br>
 
                 <br>
                 <br>
                 <br>
                 
+                @if($data->usertype =='2')
                 <h3 style="color:grey; font-size:25px">----------------- For Supervisor Use Only -----------------</H3>
                 <br>
                 
                 <h3 style=" font-size:25px">Start Date</H3>
-                <input type="date" name="startdate">
+                <input type="date" name="sdate">
 
                 <br>
                 <br>
 
                 <h3 style=" font-size:25px">End Date</H3>
-                <input type="date" name="enddate">
+                <input type="date" name="edate">
                 
                 <br>
                 <br>
                 <h3 style=" font-size:25px">Duration</H3>
                 <input type="month" name="pduration">
 
-
-                
                 <br>
                 <br>
                 <h3 style=" font-size:25px">Project Status</H3>
-                <select id="country" name="country">
+                <select  name="pstatus">
                     <option value="Milestone 1">Milestone 1</option>
                     <option value="Milestone 2">Milestone 2</option>
                     <option value="Final Report">Final Report</option>
@@ -163,13 +170,15 @@
                 <br>
                 <br>
                 <h3 style=" font-size:25px">Project Progress</H3>
-                <select id="country" name="country">
+                <select name="pprogress">
                     <option value="On Track">On Track</option>
                     <option value="Delayed">Delayed</option>
                     <option value="Extended">Extended</option>
                     <option value="Completed">Completed</option>
                 </select>
                 <br>
+                @endif
+                
                 <br>
                 <center>
                 <input type="submit" value="Submit">
