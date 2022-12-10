@@ -3,7 +3,7 @@
 
     <head>
         @include("CSS-related.header")
-        
+
         <style>
             input[type=text], select {
             width: 50%;
@@ -93,8 +93,9 @@
         @include("CSS-related.navbar")
 
         <center>
-            <h1 style="font-weight:bold; font-size:30px">FYP-MS</h1>
-            </center>
+            <h1 style="font-weight:bold; font-size:50px; color:#023273">Final Year Project Management System</h1>
+        </center>
+
         <div style="margin:40px 80px 80px 80px;">
             <form action="/action_page.php">
 
