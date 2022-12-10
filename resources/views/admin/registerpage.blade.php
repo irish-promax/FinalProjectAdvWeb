@@ -3,6 +3,7 @@
 
     <head>
         @include("CSS-related.header")
+        
         <style>
             input[type=text], select {
             width: 50%;
@@ -26,7 +27,7 @@
             }
 
             input[type=submit]:hover {
-            background-color: #45a049;
+            background-color: #5a96e6;
             }
 
             input[type=reset] {
@@ -169,13 +170,12 @@
                 </select>
                 <br>
                 <br>
+                <center>
                 <input type="submit" value="Submit">
                 <input type="reset" value="Cancel">
+                </center>
             </form>
         </div>
-        
-
-
         @include("CSS-related.footer")
 
 
