@@ -12,13 +12,20 @@
     <!-- ***** Preloader End ***** -->
 
     <!-- ***** Header Area Start ***** -->
+    
         <header class="header-area header-sticky wow slideInDown" data-wow-duration="0.75s" data-wow-delay="0s">
+            
             <div class="container">
+                
             <div class="row">
+                
                 <div class="col-12">
+                
                 <nav class="main-nav">
                     <!-- ***** Menu Start ***** -->
+                    
                     <ul class="nav">
+                   
                         @if (Route::has('login'))
                             <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
                             @auth
@@ -45,7 +52,7 @@
             </div>
         </header>
     <!-- ***** Header Area End ***** -->
-
+    <br><br><br><br><br>
     <!-- Scripts -->
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>

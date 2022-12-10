@@ -18,6 +18,8 @@ Route::get('/', function () {
     return view('home');
 });
 
+Route::view("/registerpage",'admin/registerpage');
+
 Route::middleware([
     'auth:sanctum',
     config('jetstream.auth_session'),

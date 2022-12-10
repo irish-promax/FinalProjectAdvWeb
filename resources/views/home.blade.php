@@ -71,7 +71,7 @@
                 </div>
                 <div class="col-lg-6">
                 <div class="right-image wow fadeInRight" data-wow-duration="1s" data-wow-delay="0.5s">
-                    <img src="assets/images/slider-dec.png" alt="">
+                  <img src="assets/images/FYP.png" alt="">
                 </div>
                 </div>
             </div>
@@ -85,13 +85,6 @@
 
 
 
-    <!-- Scripts -->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="assets/js/owl-carousel.js"></script>
-    <script src="assets/js/animation.js"></script>
-    <script src="assets/js/imagesloaded.js"></script>
-    <script src="assets/js/popup.js"></script>
-    <script src="assets/js/custom.js"></script>
+    @include("CSS-related.footer")
 </body>
 </html>
