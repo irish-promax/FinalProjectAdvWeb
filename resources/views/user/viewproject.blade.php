@@ -90,7 +90,8 @@
         <br>
         <br>
         <span>
-        {{$disdata->links()}}
+       
+        {{ $disdata->links('vendor.pagination.custom') }}
         <span>
     </div>
   
