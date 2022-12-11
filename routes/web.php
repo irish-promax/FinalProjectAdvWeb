@@ -21,7 +21,7 @@ Route::get('/', function () {
 Route::get("/registerpage",[homeControl::class,"adminregister"]);
 Route::POST("/add",[homeControl::class,'addData']);
 
-Route::get("/viewproject",[homeControl::class,"user"]);
+Route::get("/viewproject",[homeControl::class,"display4supervisor"]);
 
 Route::middleware([
     'auth:sanctum',

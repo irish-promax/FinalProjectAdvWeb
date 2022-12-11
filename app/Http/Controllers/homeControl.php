@@ -63,4 +63,14 @@ class homeControl extends Controller
             return view('user.userpage');
         }
     }
+
+
+    function display4supervisor(){
+
+        $userid = Auth::user()->id;
+        $disdata = Project::where('supervisorID','=',$userid)->get();
+        return view('user.viewproject',['disdata'=>$disdata]);
+   
+        
+    }
 }

@@ -21,6 +21,22 @@
                 height:500px;
                 width:400px;
             }
+
+            table, td, th {  
+                border: 1px solid #ddd;
+                text-align: left;
+                margin-top:50px;
+            }
+
+            table {
+                border-collapse: collapse;
+                width: 90%;
+            }
+
+            th, td {
+                padding: 15px;
+                text-align:center;
+            }
         </style>
     </head>
 
@@ -31,26 +47,26 @@
         <h1 style="font-weight:bold; font-size:50px; color:#023273">Final Year Project Management System</h1>
 
         <div>
-        <table bgcolor="grey", border=3px>
+        <table>
             <tr>
-                <th style="padding: 50px">ID</th>
-                <th style="padding: 50px">Name</th>
-                <th style="padding: 50px">Email</th>
-                <th style="padding: 50px">User Type</th>
-                <th style="padding: 50px">Action</th>
+                <th>Project ID</th>
+                <th>Title</th>
+                <th>Student ID</th>
+                <th>Student Name</th>
+                <th>Project Status</th>
+                <th>Project Progress</th>
+                <th>Action</th>
             </tr>
-            @foreach($data as $data)
+            @foreach($disdata as $data)
             <tr align="center">
-                <th>{{$data->id}}</th>
-                <th>{{$data->name}}</th>
-                <th>{{$data->email}}</th>
-                <th>{{$data->usertype}}</th>
-                @if($data->usertype == 0)
-                    <th><a href="{{url('/deleteuser', $data->id)}}">Delete?</a></th>
-                @else
-                    <th><a>Not allowed</a></th>
-                    @endif
-            </tr>
+                <td>{{$data->projectID}}</td>
+                <td>{{$data->title}}</td>
+                <td>{{$data->studentID}}</td>
+                <td>{{$data->studentName}}</td>
+                <td>{{$data->projectStatus}}</td>
+                <td>{{$data->projectProgress}}</td>
+                <td>-</td>
+                
             @endforeach
         </table>
     </div>
