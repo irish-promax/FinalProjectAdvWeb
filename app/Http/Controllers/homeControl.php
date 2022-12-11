@@ -68,7 +68,8 @@ class homeControl extends Controller
     function display4supervisor(){
 
         $userid = Auth::user()->id;
-        $disdata = Project::where('supervisorID','=',$userid)->get();
+        $disdata = Project::where('supervisorID','=',$userid)
+        ->paginate(10);
         return view('user.viewproject',['disdata'=>$disdata]);
    
         

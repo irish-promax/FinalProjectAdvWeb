@@ -5,7 +5,6 @@
         @include("CSS-related.header")
 
         <style>
-            
             .button {
                 background-color: blue; /* Green */
                 border: none;
@@ -54,8 +53,8 @@
                 <th>Title</th>
                 <th>Student ID</th>
                 <th>Student Name</th>
-                <th>Project Status</th>
                 <th>Project Progress</th>
+                <th>Project Status</th>
                 <th>Action</th>
             </tr>
             @foreach($disdata as $data)
@@ -64,44 +63,17 @@
                 <td>{{$data->title}}</td>
                 <td>{{$data->studentID}}</td>
                 <td>{{$data->studentName}}</td>
-
-                @if($data->projectStatus == 'On track')
-                    <td style="font-weight:bold; color: blue;">{{$data->projectStatus}}</td>
-                    @elseif($data->projectStatus == 'Delayed')
-                    <td style="font-weight:bold; color: orange;">{{$data->projectStatus}}</td>
-                    @elseif($data->projectStatus == 'Extended')
-                    <td style="font-weight:bold; color: red;">{{$data->projectStatus}}</td>
-                    @else
-                    <td style="font-weight:bold; color: green;">{{$data->projectStatus}}</td>
-                @endif
-
-                
-                <td style="font-weight:bold;">{{$data->projectProgress}}</td>
-                  
-                
-          
+                <td>{{$data->projectStatus}}</td>
+                <td>{{$data->projectProgress}}</td>
                 <td>-</td>
                 
             @endforeach
-            
         </table>
-       
-        <br>
-        <br>
-        <br>
-        <span>
-        {{$disdata->links()}}
-        <span>
     </div>
-  
         </center>
-        
-            
-            
-        
+
         @include("CSS-related.footer")
 
 
     </body>
 </html>
-
