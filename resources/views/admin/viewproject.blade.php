@@ -69,9 +69,17 @@
                 
             @endforeach
         </table>
+   
+        <br>
+        <br>
+        <br>
+        <span>
+       
+        {{ $disdata->links('vendor.pagination.custom') }}
+        <span>
     </div>
+  
         </center>
-
         @include("CSS-related.footer")
 
 

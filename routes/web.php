@@ -18,6 +18,10 @@ Route::get('/', function () {
     return view('home');
 });
 
+Route::get('/testing', function () {
+    return view('user.testing');
+});
+
 Route::get("/registerpage",[homeControl::class,"adminregister"]);
 Route::POST("/add",[homeControl::class,'addData']);
 
@@ -34,3 +38,6 @@ Route::middleware([
 });
 
 Route::get("/redirect", [homeControl::class,"redirectFunct"]);
+
+Route::get("/upd/{xx}",[homeControl::class,"showtoupdateProject"]);
+Route::POST("edit",[homeControl::class,'updateProject']);

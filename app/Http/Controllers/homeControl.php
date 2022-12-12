@@ -41,9 +41,9 @@ class homeControl extends Controller
         //$member->cust_id = $req->custid;
         $member->title = $req->pname;
         $member->start_date = null;
-        $member->end_date =null;
+        $member->end_date = null;
 
-        $member->duration = null;
+        $member->duration = '';
         $member->projectProgress = '';
         $member->projectStatus = '';
         $member->supervisorID = $req->supervisor;
@@ -66,12 +66,34 @@ class homeControl extends Controller
 
 
     function display4supervisor(){
+        $userid = Auth::user()->id;
+        $disdata = Project::where('supervisorID','=',$userid)
+        ->paginate(10);
+        return view('user.viewproject',['disdata'=>$disdata]); 
+    }
+
+    //Update Function
+    function showtoupdateProject($ID){
+        $output = Project::find($ID);
+        return view('user.updateProject',['output'=> $output]);
+    }
+
+    function updateProject(Request $req){ //request data from form
+        $data=Project::find($req->projectID); //id from the form name
+        
+        $data->start_date=$req->sdate;
+        $data->end_date=$req->edate;
+        
+        $data->duration=$req->pduration;
+        $data->projectStatus=$req->pstatus;
+        $data->projectProgress=$req->pprogress;
+
+        $data->save();
 
         $userid = Auth::user()->id;
         $disdata = Project::where('supervisorID','=',$userid)
         ->paginate(10);
-        return view('user.viewproject',['disdata'=>$disdata]);
-   
-        
+        return view('user.viewproject',['disdata'=>$disdata]); 
     }
+
 }

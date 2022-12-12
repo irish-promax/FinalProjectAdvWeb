@@ -140,44 +140,6 @@
                 <br>
                 <br>
                 
-                @if($data->usertype =='2')
-                <h3 style="color:grey; font-size:25px">----------------- For Supervisor Use Only -----------------</H3>
-                <br>
-                
-                <h3 style=" font-size:25px">Start Date</H3>
-                <input type="date" name="sdate">
-
-                <br>
-                <br>
-
-                <h3 style=" font-size:25px">End Date</H3>
-                <input type="date" name="edate">
-                
-                <br>
-                <br>
-                <h3 style=" font-size:25px">Duration</H3>
-                <input type="month" name="pduration">
-
-                <br>
-                <br>
-                <h3 style=" font-size:25px">Project Status</H3>
-                <select  name="pstatus">
-                    <option value="Milestone 1">Milestone 1</option>
-                    <option value="Milestone 2">Milestone 2</option>
-                    <option value="Final Report">Final Report</option>
-                </select>
-
-                <br>
-                <br>
-                <h3 style=" font-size:25px">Project Progress</H3>
-                <select name="pprogress">
-                    <option value="On Track">On Track</option>
-                    <option value="Delayed">Delayed</option>
-                    <option value="Extended">Extended</option>
-                    <option value="Completed">Completed</option>
-                </select>
-                <br>
-                @endif
                 
                 <br>
                 <center>

@@ -3,7 +3,6 @@
 
     <head>
         @include("CSS-related.header")
-
         <style>
             
             .button {
@@ -27,11 +26,14 @@
                 border: 1px solid #ddd;
                 text-align: left;
                 margin-top:50px;
+                border-radius: 16px;
             }
 
+            
             table {
                 border-collapse: collapse;
                 width: 90%;
+                
             }
 
             th, td {
@@ -60,7 +62,7 @@
             </tr>
             @foreach($disdata as $data)
             <tr align="center">
-                <td>{{$data->projectID}}</td>
+                <td>{{$data['projectID']}}</td>
                 <td>{{$data->title}}</td>
                 <td>{{$data->studentID}}</td>
                 <td>{{$data->studentName}}</td>
@@ -80,7 +82,10 @@
                   
                 
           
-                <td>-</td>
+                <td>
+                    <a href={{"upd/".$data['projectID']}} style="border-radius:10px; padding: 10px 30px 10px 30px; margin:10px;background-color: #FFC84D; color:white;font-weight:bold;"  > Update &nbsp &nbsp 🖊 </a> 
+                    <a href={{"del/".$data['projectID']}} style="border-radius:10px; padding: 10px 30px 10px 30px; margin:10px;background-color: #FF4D4D; color:white;font-weight:bold;"  > Delete &nbsp &nbsp 🗑 </a>
+                </td>
                 
             @endforeach
             
@@ -96,10 +101,6 @@
     </div>
   
         </center>
-        
-            
-            
-        
         @include("CSS-related.footer")
 
 
