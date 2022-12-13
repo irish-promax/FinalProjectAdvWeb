@@ -74,8 +74,11 @@ class homeControl extends Controller
 
     //Update Function
     function showtoupdateProject($ID){
+        $ex1 = User::all();
+        $ex2 = User::all();
+        $sv = User::all();
         $output = Project::find($ID);
-        return view('user.updateProject',['output'=> $output]);
+        return view('user.updateProject',['output'=> $output, 'ex1'=>$ex1, 'ex2'=>$ex2, 'sv'=>$sv,  ]);
     }
 
     function updateProject(Request $req){ //request data from form
@@ -89,7 +92,7 @@ class homeControl extends Controller
         $data->projectProgress=$req->pprogress;
 
         $data->save();
-
+       
         $userid = Auth::user()->id;
         $disdata = Project::where('supervisorID','=',$userid)
         ->paginate(10);

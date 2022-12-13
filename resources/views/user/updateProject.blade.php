@@ -75,19 +75,34 @@
             <br>
             <br>
             <h3 style=" font-size:25px">Supervisor</H3>
-            <input type="text"  name="sid" value ="{{$output->examiner1ID}}" disabled>
+            @foreach($sv as $sv)
+                    @if($sv->id == $output->supervisorID)
+                        <input type="text"  name="sv" placeholder="Enter project title here" value ="{{$output->supervisorID}}" disabled>
+                        <input type="text"  name="sv" placeholder="Enter project title here" value ="{{$sv->name}}" disabled>
+                    @endif
+            @endforeach
                
 
             <br>
                 <br>
                 <h3 style=" font-size:25px">Examiner 1</H3>
-                <input type="text"  name="exa1" placeholder="Enter project title here" value ="{{$output->supervisorID}}" disabled>
+                @foreach($ex1 as $ex1)
+                    @if($ex1->id == $output->examiner1ID)
+                        <input type="text"  name="exa1" placeholder="Enter project title here" value ="{{$output->examiner1ID}}" disabled>
+                        <input type="text"  name="exa1" placeholder="Enter project title here" value ="{{$ex1->name}}" disabled>
+                    @endif
+                @endforeach
               
 
                 <br>
                 <br>
                 <h3 style=" font-size:25px">Examiner 2</H3>
-                <input type="text"  name="exa2" value ="{{$output->examiner2ID}}" disabled>
+                @foreach($ex2 as $ex2)
+                    @if($ex2->id == $output->examiner2ID)
+                        <input type="text"  name="exa2"  value ="{{$output->examiner2ID}}" disabled>
+                        <input type="text"  name="exa2"  value ="{{$ex2->name}}" disabled>
+                    @endif
+                @endforeach
                 
                 <br>
 
@@ -124,11 +139,14 @@
                         <p style="border-radius:10px; padding:2px;margin:10px;height: 30px;color:white;text-align:center; width: 10%; font-weight:bold; background-color: orange;">{{$output->projectStatus}}</p>
                         @elseif($output->projectStatus == 'Extended')
                         <p style="border-radius:10px; padding:2px;margin:10px;height: 30px; color:white;text-align:center;width: 10%; font-weight:bold; background-color: red;">{{$output->projectStatus}}</p>
+                        @elseif($output->projectStatus == '')
+                        <p>-</p>
                         @else
                         <p style="border-radius:10px; padding:2px;margin:10px; height: 30px;color:white; text-align:center; width: 10%; font-weight:bold; background-color: green;">{{$output->projectStatus}}</p>
                         @endif 
                         <p style="color:red;">Choose to update project status:</p>    
                 <select  name="pstatus">
+                <option selected value="{{$output->projectStatus}}">{{$output->projectStatus}}</option> 
                     <option value="On Track">On Track</option>
                     <option value="Delayed">Delayed</option>
                     <option value="Extended">Extended</option>
@@ -143,15 +161,18 @@
                         <p style="border-radius:10px; padding:2px; margin:10px;height: 30px;color:white;text-align:center;width: 10%; font-weight:bold; background-color: blue;">{{$output->projectProgress}}</p>
                         @elseif($output->projectProgress == 'Milestone 1')
                         <p style="border-radius:10px; padding:2px;margin:10px;height: 30px;color:white;text-align:center; width: 10%; font-weight:bold; background-color: orange;">{{$output->projectProgress}}</p>
+                        @elseif($output->projectStatus == '')
+                        <p>-</p>
                         @else($output->projectProgress == 'Milestone 1')
                         <p style="border-radius:10px; padding:2px;margin:10px;height: 30px; color:white;text-align:center;width: 10%; font-weight:bold; background-color: green;">{{$output->projectProgress}}</p>
                         @endif 
                         <p style="color:red;">Choose to update project progress:</p> 
                 <select name="pprogress">
-                <option value="Milestone 1">Milestone 1</option>
+                    <option selected value="{{$output->projectProgress}}">{{$output->projectProgress}}</option>    
+                    <option value="Milestone 1">Milestone 1</option>
                     <option value="Milestone 2">Milestone 2</option>
                     <option value="Final Report">Final Report</option>
-                    </select> 
+                </select> 
                 <br>
                 <br>
                 <br>
