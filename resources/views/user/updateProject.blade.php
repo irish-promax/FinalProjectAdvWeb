@@ -54,6 +54,7 @@
 
         <center>
             <h1 style="font-weight:bold; font-size:50px; color:#023273">Final Year Project Management System</h1>
+            <h2 style="font-weight:bold; font-size:50px; color:#023273"> <a href="/redirect">Back to home page</a></h2>
         </center>
 
         <div style="margin:40px 80px 80px 80px;">
@@ -176,8 +177,6 @@
                 <br>
                 <br>
                 <br>
-                
-                
                 <br>
                 <center>
                 <input type="submit" value="Submit">

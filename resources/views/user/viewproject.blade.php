@@ -47,8 +47,9 @@
         @include("CSS-related.navbar")
 
         <center>
+        
         <h1 style="font-weight:bold; font-size:50px; color:#023273">Final Year Project Management System</h1>
-
+        <h2 style="font-weight:bold; font-size:50px; color:#023273"> <a href="/redirect">Back to home page</a></h2>
         <div>
         <table>
             <tr>

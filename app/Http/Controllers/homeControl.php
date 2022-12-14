@@ -83,16 +83,12 @@ class homeControl extends Controller
 
     function updateProject(Request $req){ //request data from form
         $data=Project::find($req->projectID); //id from the form name
-        
         $data->start_date=$req->sdate;
         $data->end_date=$req->edate;
-        
         $data->duration=$req->pduration;
         $data->projectStatus=$req->pstatus;
         $data->projectProgress=$req->pprogress;
-
         $data->save();
-       
         $userid = Auth::user()->id;
         $disdata = Project::where('supervisorID','=',$userid)
         ->paginate(10);
