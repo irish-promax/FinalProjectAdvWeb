@@ -42,3 +42,5 @@ Route::get("/redirect", [homeControl::class,"redirectFunct"]);
 
 Route::get("/upd/{xx}",[homeControl::class,"showtoupdateProject"]);
 Route::POST("edit",[homeControl::class,'updateProject']);
+
+Route::get("/del/{xx}/",[homeControl::class,"deleteProject"]);

@@ -80,11 +80,6 @@ class homeControl extends Controller
             ->orWhere('examiner2ID', '=', $userid);
         })->paginate(10);
         return view('user.examineeproject',['disdata'=>$disdata]);
-
-       
-
-
-        
     }
 
     //Update Function
@@ -108,6 +103,14 @@ class homeControl extends Controller
         $disdata = Project::where('supervisorID','=',$userid)
         ->paginate(10);
         return view('user.donePage'); 
+    }
+
+    //Delete Function
+    function deleteProject($ID){
+        $value=Project::find($ID);
+        $value->delete();
+        return view('user.deletePage');
+
     }
 
 }
