@@ -75,13 +75,12 @@
         <br>
         <span>
        
-        {{ $disdata->links('vendor.pagination.custom') }}
+        {{ $disdata->links() }}
         <span>
     </div>
   
         </center>
-        @include("CSS-related.footer")
-
+   
 
     </body>
 </html>

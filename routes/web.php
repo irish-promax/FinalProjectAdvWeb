@@ -26,6 +26,7 @@ Route::get("/registerpage",[homeControl::class,"adminregister"]);
 Route::POST("/add",[homeControl::class,'addData']);
 
 Route::get("/viewproject",[homeControl::class,"display4supervisor"]);
+Route::get("/viewprojectexaminee",[homeControl::class,"display4examiner"]);
 
 Route::middleware([
     'auth:sanctum',

@@ -127,7 +127,7 @@
                 <br>
                 <br>
                 <h3 style=" font-size:25px">Duration</H3>
-                <input type="month" name="pduration" value ="{{$output->duration}}">
+                <input type="number" name="pduration" value ="{{$output->duration}}">
 
                 <br>
                 <br>

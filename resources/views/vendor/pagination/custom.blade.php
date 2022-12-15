@@ -3,6 +3,13 @@
 
 <head>
 	<title>Page Title</title>
+
+	<style>
+		 body {
+            background-color: #222222
+        }
+
+		</style>
 </head>
 
 <body>
@@ -34,13 +41,12 @@
 		@if (is_array($element))
 		@foreach ($element as $page => $url)
 		@if ($page == $paginator->currentPage())
-		<li class="page-item active">
+		<li >
 			<a class="page-link">{{ $page }}</a>
 		</li>
 		@else
 		<li class="page-item">
-			<a class="page-link"
-			href="{{ $url }}">{{ $page }}</a>
+			<a class="page-link" href="{{ $url }}">{{ $page }}</a>
 		</li>
 		@endif
 		@endforeach
@@ -61,6 +67,14 @@
 	</ul>
 </nav>
 	@endif
+
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+
+
 
 </html>
 

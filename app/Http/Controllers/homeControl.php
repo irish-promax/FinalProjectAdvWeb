@@ -72,6 +72,21 @@ class homeControl extends Controller
         return view('user.viewproject',['disdata'=>$disdata]); 
     }
 
+    function display4examiner(){
+        
+        $disdata = Project::where(function ($query) {
+            $userid = Auth::user()->id;
+            $query->where('examiner1ID','=',$userid)
+            ->orWhere('examiner2ID', '=', $userid);
+        })->paginate(2);
+        return view('user.examineeproject',['disdata'=>$disdata]);
+
+       
+
+
+        
+    }
+
     //Update Function
     function showtoupdateProject($ID){
         $ex1 = User::all();
@@ -92,7 +107,7 @@ class homeControl extends Controller
         $userid = Auth::user()->id;
         $disdata = Project::where('supervisorID','=',$userid)
         ->paginate(10);
-        return view('user.viewproject',['disdata'=>$disdata]); 
+        return view('user.donePage'); 
     }
 
 }
