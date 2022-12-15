@@ -78,7 +78,7 @@ class homeControl extends Controller
             $userid = Auth::user()->id;
             $query->where('examiner1ID','=',$userid)
             ->orWhere('examiner2ID', '=', $userid);
-        })->paginate(2);
+        })->paginate(10);
         return view('user.examineeproject',['disdata'=>$disdata]);
 
        
