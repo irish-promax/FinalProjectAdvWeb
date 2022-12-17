@@ -254,7 +254,6 @@
                         <span class="menu-title">Examinee</span>
                     </a>
                 </li>
-                
             </ul>
         </nav>
 
