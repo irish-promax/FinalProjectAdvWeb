@@ -3,8 +3,12 @@
     <head>
         @include("CSS-related.header")
         <style>
+            body {
+            background-color: #222222
+        }
+
             input[type=text], select {
-            width: 50%;
+            width: 60%;
             padding: 12px 20px;
          
             display: inline-block;
@@ -43,6 +47,13 @@
             background-color: red;
             }
 
+            h3{
+                color: white;
+            }
+            p{
+                color: white;
+            }
+
     
 
           
@@ -52,12 +63,8 @@
     <body>
         @include("CSS-related.navbar")
 
-        <center>
-            <h1 style="font-weight:bold; font-size:50px; color:#023273">Final Year Project Management System</h1>
-            <h2 style="font-weight:bold; font-size:50px; color:#023273"> <a href="/redirect">Back to home page</a></h2>
-        </center>
-
-        <div style="margin:40px 80px 80px 80px;">
+   
+        <div style="margin:0px 60px 60px 60px; background-color:#48527D; padding:10px;">
         <form action="/edit" method="post">
             @csrf
             <input type="hidden"  name="projectID" value ="{{$output->projectID}}">
@@ -133,7 +140,7 @@
                 <br>
                 <p style=" font-size:25px">Project Status</p>
                 
-                Current Status: 
+                <p>Current Status: </p>
                         @if($output->projectStatus == 'On track')
                         <p style="border-radius:10px; padding:2px; margin:10px;height: 30px;color:white;text-align:center;width: 10%; font-weight:bold; background-color: blue;">{{$output->projectStatus}}</p>
                         @elseif($output->projectStatus == 'Delayed')
@@ -157,7 +164,7 @@
                 <br>
                 <br>
                 <h3 style=" font-size:25px">Project Progress</H3>
-                Current Status: 
+                <p>Current Progress: </p>
                         @if($output->projectProgress == 'Final Report')
                         <p style="border-radius:10px; padding:2px; margin:10px;height: 30px;color:white;text-align:center;width: 10%; font-weight:bold; background-color: blue;">{{$output->projectProgress}}</p>
                         @elseif($output->projectProgress == 'Milestone 1')
@@ -185,7 +192,7 @@
             </form>
         </div>
         
-        @include("CSS-related.footer")
+
 
 
     </body>

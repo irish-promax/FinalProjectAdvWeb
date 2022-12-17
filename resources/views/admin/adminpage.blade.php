@@ -1,50 +1,34 @@
-<!DOCTYPE html>
-<html lang="en">
+@extends("CSS-related.bootstrapTest")
 
-<head>
-    @include("CSS-related.header")
 
-    <style>
-        body {
-            background-color: #434242
-        }
+@section('xxx')
+    <center>
+        <br>
+        <br>
+        <br>
+        <button style=" border-radius:20px;
+            background-color: #274060;
+            width: 300px;
+            height: 250px; margin:20px; font-size: 25px;font-weight:bold;color:white">
+            <a href="/registerpage">Register New Project</a></button>
 
-        .button {
-            background-color: blue;
-            /* Green */
-            border: none;
-            color: white;
-            padding: 20px;
-            text-align: center;
-            text-decoration: none;
-            display: inline-block;
-            font-size: 30px;
-            font-weight: bold;
-            margin: 40px 20px;
-            cursor: pointer;
-            border-radius: 16px;
-            height: 500px;
-            width: 400px;
-        }
-    </style>
-</head>
-
-<body>
-    @include("CSS-related.navbar")
-
+        <button style=" border-radius:20px;
+            background-color: #274060;
+            width: 300px;
+            height: 250px; margin:20px;font-size: 25px; font-weight:bold;color:white">
+            <a href="/viewallproject">View Project</a></button> 
+        
+        <button style=" border-radius:20px;
+            background-color: #274060;
+            width: 300px;
+            height: 250px;margin:20px;font-size: 25px;font-weight:bold;color:white">
+            <a href="/viewproject">View Supervisee</a></button> 
+        
+        <button style=" border-radius:25px;
+            background-color: #274060;
+            width: 600px;
+            height: 250px;margin:20px;font-size: 25px;font-weight:bold; color:white">
+            <a href="/viewprojectexaminee">View Examinee</a></button>
     <center>
 
-        <button class="button button1"> <a href="registerpage"> <img src="assets/images/img2.png"
-                    alt="register">Register New Project</a></button>
-        <button style="background-color:green" class="button button1"><a href="/viewproject"><img
-                    src="assets/images/img1.png" alt="view">View Project</a></button>
-    </center>
-
-
-    <br>
-    <br>
-    <br>
-    <br>
-</body>
-
-</html>
+@stop

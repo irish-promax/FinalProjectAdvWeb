@@ -14,18 +14,14 @@ use App\Http\Controllers\homeControl;
 |
 */
 
-Route::get('/', function () {
-    return view('home');
-});
-
-Route::get('/testing', function () {
-    return view('user.testing');
-});
+Route::get('/', function () {return view('home');});
 
 Route::get("/registerpage",[homeControl::class,"adminregister"]);
 Route::POST("/add",[homeControl::class,'addData']);
 
 Route::get("/viewproject",[homeControl::class,"display4supervisor"]);
+Route::get("/viewallproject",[homeControl::class,"display4all"]);
+
 Route::get("/viewprojectexaminee",[homeControl::class,"display4examiner"]);
 
 Route::middleware([
