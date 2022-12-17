@@ -2,26 +2,28 @@
 <html lang="en">
 
 <head>
+
+
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>FYP-MS</title>
     <!-- plugins:css -->
-    <link rel="stylesheet" href="boot/vendors/feather/feather.css">
-    <link rel="stylesheet" href="boot/vendors/mdi/css/materialdesignicons.min.css">
-    <link rel="stylesheet" href="boot/vendors/ti-icons/css/themify-icons.css">
-    <link rel="stylesheet" href="boot/vendors/typicons/typicons.css">
-    <link rel="stylesheet" href="boot/vendors/simple-line-icons/css/simple-line-icons.css">
-    <link rel="stylesheet" href="boot/vendors/css/vendor.bundle.base.css">
+    <link rel="stylesheet" href="{{asset('boot/vendors/feather/feather.css')}}">
+    <link rel="stylesheet" href="{{asset('boot/vendors/mdi/css/materialdesignicons.min.css')}}">
+    <link rel="stylesheet" href="{{asset('boot/vendors/ti-icons/css/themify-icons.css')}}">
+    <link rel="stylesheet" href="{{asset('boot/vendors/typicons/typicons.css')}}">
+    <link rel="stylesheet" href="{{asset('boot/vendors/simple-line-icons/css/simple-line-icons.css')}}">
+    <link rel="stylesheet" href="{{asset('boot/vendors/css/vendor.bundle.base.css')}}">
     <!-- endinject -->
     <!-- Plugin css for this page -->
-    <link rel="stylesheet" href="boot/vendors/datatables.net-bs4/dataTables.bootstrap4.css">
-    <link rel="stylesheet" href="boot/js/select.dataTables.min.css">
+    <link rel="stylesheet" href="{{asset('boot/vendors/datatables.net-bs4/dataTables.bootstrap4.css')}}">
+    <link rel="stylesheet" href="{{asset('boot/js/select.dataTables.min.css')}}">
     <!-- End plugin css for this page -->
     <!-- inject:css -->
-    <link rel="stylesheet" href="boot/css/vertical-layout-light/style.css">
+    <link rel="stylesheet" href="{{asset('boot/css/vertical-layout-light/style.css')}}">
     <!-- endinject -->
-    <link rel="shortcut icon" href="boot/images/favicon.png" />
+    <link rel="shortcut icon" href="{{asset('boot/images/favicon.png')}}">
 </head>
 
 <body>
@@ -56,29 +58,7 @@
     </nav>
     <!-- partial -->
     <div class="container-fluid page-body-wrapper">
-        <!-- partial:partials/_settings-panel.html -->
-        <div class="theme-setting-wrapper">
-            <div id="settings-trigger"><i class="ti-settings"></i></div>
-            <div id="theme-settings" class="settings-panel">
-                <i class="settings-close ti-close"></i>
-                <p class="settings-heading">SIDEBAR SKINS</p>
-                <div class="sidebar-bg-options selected" id="sidebar-light-theme">
-                    <div class="img-ss rounded-circle bg-light border me-3"></div>Light
-                </div>
-                <div class="sidebar-bg-options" id="sidebar-dark-theme">
-                    <div class="img-ss rounded-circle bg-dark border me-3"></div>Dark
-                </div>
-                <p class="settings-heading mt-2">HEADER SKINS</p>
-                <div class="color-tiles mx-0 px-4">
-                    <div class="tiles success"></div>
-                    <div class="tiles warning"></div>
-                    <div class="tiles danger"></div>
-                    <div class="tiles info"></div>
-                    <div class="tiles dark"></div>
-                    <div class="tiles default"></div>
-                </div>
-            </div>
-        </div>
+        
         <div id="right-sidebar" class="settings-panel">
             <i class="settings-close ti-close"></i>
             <ul class="nav nav-tabs border-top" id="setting-panel" role="tablist">
@@ -244,107 +224,37 @@
         <!-- partial:partials/_sidebar.html -->
         <nav class="sidebar sidebar-offcanvas" id="sidebar">
             <ul class="nav">
+
                 <li class="nav-item">
-                    <a class="nav-link" href="index.html">
+                    <a class="nav-link" href="/redirect">
                         <i class="mdi mdi-grid-large menu-icon"></i>
                         <span class="menu-title">Dashboard</span>
                     </a>
                 </li>
-                <li class="nav-item nav-category">UI Elements</li>
+                
+                <li class="nav-item nav-category">Project</li>
+
                 <li class="nav-item">
-                    <a class="nav-link" data-bs-toggle="collapse" href="#ui-basic" aria-expanded="false"
-                        aria-controls="ui-basic">
-                        <i class="menu-icon mdi mdi-floor-plan"></i>
-                        <span class="menu-title">UI Elements</span>
-                        <i class="menu-arrow"></i>
-                    </a>
-                    <div class="collapse" id="ui-basic">
-                        <ul class="nav flex-column sub-menu">
-                            <li class="nav-item"> <a class="nav-link" href="pages/ui-features/buttons.html">Buttons</a>
-                            </li>
-                            <li class="nav-item"> <a class="nav-link"
-                                    href="pages/ui-features/dropdowns.html">Dropdowns</a></li>
-                            <li class="nav-item"> <a class="nav-link"
-                                    href="pages/ui-features/typography.html">Typography</a></li>
-                        </ul>
-                    </div>
-                </li>
-                <li class="nav-item nav-category">Forms and Datas</li>
-                <li class="nav-item">
-                    <a class="nav-link" data-bs-toggle="collapse" href="#form-elements" aria-expanded="false"
-                        aria-controls="form-elements">
-                        <i class="menu-icon mdi mdi-card-text-outline"></i>
-                        <span class="menu-title">Form elements</span>
-                        <i class="menu-arrow"></i>
-                    </a>
-                    <div class="collapse" id="form-elements">
-                        <ul class="nav flex-column sub-menu">
-                            <li class="nav-item"><a class="nav-link" href="pages/forms/basic_elements.html">Basic
-                                    Elements</a></li>
-                        </ul>
-                    </div>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" data-bs-toggle="collapse" href="#charts" aria-expanded="false"
-                        aria-controls="charts">
-                        <i class="menu-icon mdi mdi-chart-line"></i>
-                        <span class="menu-title">Charts</span>
-                        <i class="menu-arrow"></i>
-                    </a>
-                    <div class="collapse" id="charts">
-                        <ul class="nav flex-column sub-menu">
-                            <li class="nav-item"> <a class="nav-link" href="pages/charts/chartjs.html">ChartJs</a></li>
-                        </ul>
-                    </div>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" data-bs-toggle="collapse" href="#tables" aria-expanded="false"
-                        aria-controls="tables">
-                        <i class="menu-icon mdi mdi-table"></i>
-                        <span class="menu-title">Tables</span>
-                        <i class="menu-arrow"></i>
-                    </a>
-                    <div class="collapse" id="tables">
-                        <ul class="nav flex-column sub-menu">
-                            <li class="nav-item"> <a class="nav-link" href="pages/tables/basic-table.html">Basic
-                                    table</a></li>
-                        </ul>
-                    </div>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" data-bs-toggle="collapse" href="#icons" aria-expanded="false"
-                        aria-controls="icons">
-                        <i class="menu-icon mdi mdi-layers-outline"></i>
-                        <span class="menu-title">Icons</span>
-                        <i class="menu-arrow"></i>
-                    </a>
-                    <div class="collapse" id="icons">
-                        <ul class="nav flex-column sub-menu">
-                            <li class="nav-item"> <a class="nav-link" href="pages/icons/mdi.html">Mdi icons</a></li>
-                        </ul>
-                    </div>
-                </li>
-                <li class="nav-item nav-category">pages</li>
-                <li class="nav-item">
-                    <a class="nav-link" data-bs-toggle="collapse" href="#auth" aria-expanded="false"
-                        aria-controls="auth">
+                    <a class="nav-link" href="/viewallproject">
                         <i class="menu-icon mdi mdi-account-circle-outline"></i>
-                        <span class="menu-title">User Pages</span>
-                        <i class="menu-arrow"></i>
+                        <span class="menu-title">All Project</span>
                     </a>
-                    <div class="collapse" id="auth">
-                        <ul class="nav flex-column sub-menu">
-                            <li class="nav-item"> <a class="nav-link" href="pages/samples/login.html"> Login </a></li>
-                        </ul>
-                    </div>
                 </li>
-                <li class="nav-item nav-category">help</li>
+
                 <li class="nav-item">
-                    <a class="nav-link" href="http://bootstrapdash.com/demo/star-admin2-free/docs/documentation.html">
-                        <i class="menu-icon mdi mdi-file-document"></i>
-                        <span class="menu-title">Documentation</span>
+                    <a class="nav-link" href="/viewproject">
+                        <i class="menu-icon mdi mdi-account-circle-outline"></i>
+                        <span class="menu-title">Supervisee</span>
                     </a>
                 </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/viewprojectexaminee">
+                        <i class="menu-icon mdi mdi-account-circle-outline"></i>
+                        <span class="menu-title">Examinee</span>
+                    </a>
+                </li>
+                
             </ul>
         </nav>
 
@@ -370,25 +280,25 @@
     <!-- container-scroller -->
 
     <!-- plugins:js -->
-    <script src="boot/vendors/js/vendor.bundle.base.js"></script>
+    <script src="{{asset('boot/vendors/js/vendor.bundle.base.js')}}"></script>
     <!-- endinject -->
     <!-- Plugin js for this page -->
-    <script src="boot/vendors/chart.js/Chart.min.js"></script>
-    <script src="boot/vendors/bootstrap-datepicker/bootstrap-datepicker.min.js"></script>
-    <script src="boot/vendors/progressbar.js/progressbar.min.js"></script>
+    <script src="{{asset('boot/vendors/chart.js/Chart.min.js')}}"></script>
+    <script src="{{asset('boot/vendors/bootstrap-datepicker/bootstrap-datepicker.min.js')}}"></script>
+    <script src="{{asset('boot/vendors/progressbar.js/progressbar.min.js')}}"></script>
 
     <!-- End plugin js for this page -->
     <!-- inject:js -->
-    <script src="boot/js/off-canvas.js"></script>
-    <script src="boot/js/hoverable-collapse.js"></script>
-    <script src="boot/js/template.js"></script>
-    <script src="boot/js/settings.js"></script>
-    <script src="boot/js/todolist.js"></script>
+    <script src="{{asset('boot/js/off-canvas.js')}}"></script>
+    <script src="{{asset('boot/js/hoverable-collapse.js')}}"></script>
+    <script src="{{asset('boot/js/template.js')}}"></script>
+    <script src="{{asset('boot/js/settings.js')}}"></script>
+    <script src="{{asset('boot/js/todolist.js')}}"></script>
     <!-- endinject -->
     <!-- Custom js for this page-->
-    <script src="boot/js/jquery.cookie.js" type="text/javascript"></script>
-    <script src="boot/js/dashboard.js"></script>
-    <script src="boot/js/Chart.roundedBarCharts.js"></script>
+    <script src="{{asset('boot/js/jquery.cookie.js" type="text/javascript')}}"></script>
+    <script src="{{asset('boot/js/dashboard.js')}}"></script>
+    <script src="{{asset('boot/js/Chart.roundedBarCharts.js')}}"></script>
     <!-- End custom js for this page-->
 </body>
 

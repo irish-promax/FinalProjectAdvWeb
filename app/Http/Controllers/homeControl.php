@@ -65,8 +65,6 @@ class homeControl extends Controller
         }
     }
 
-
-    
     //Display All Function
     function display4all()
     {
@@ -74,7 +72,6 @@ class homeControl extends Controller
         return view('admin.viewallproject', ['disdata' => $disdata]);
     }
 
-    
     //Display For Supervisor Function
     function display4supervisor()
     {
@@ -93,7 +90,7 @@ class homeControl extends Controller
             $query->where('examiner1ID', '=', $userid)
                 ->orWhere('examiner2ID', '=', $userid);
         })->paginate(10);
-        return view('user.examineeproject', ['disdata' => $disdata]);
+        return view('user.examineeproject',['disdata' => $disdata]);
     }
 
     //Update Function
@@ -103,7 +100,7 @@ class homeControl extends Controller
         $ex2 = User::all();
         $sv = User::all();
         $output = Project::find($ID);
-        return view('user.updateProject', ['output' => $output, 'ex1' => $ex1, 'ex2' => $ex2, 'sv' => $sv,]);
+        return view('user.updateProject',['output' => $output, 'ex1' => $ex1, 'ex2' => $ex2, 'sv' => $sv,]);
     }
 
     //Update Function
@@ -115,6 +112,8 @@ class homeControl extends Controller
         $data->duration = $req->pduration;
         $data->projectStatus = $req->pstatus;
         $data->projectProgress = $req->pprogress;
+        $data->title = $req->pname;
+        
         $data->save();
         return view('user.donePage');
     }

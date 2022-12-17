@@ -1,7 +1,6 @@
-<html>
-  <head>
-    <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:400,400i,700,900&display=swap" rel="stylesheet">
-    @include("CSS-related.header")
+@extends("CSS-related.bootstrapTest")
+@section('xxx')
+<link href="https://fonts.googleapis.com/css?family=Nunito+Sans:400,400i,700,900&display=swap" rel="stylesheet">
     <style>
 
 
@@ -43,7 +42,6 @@
   </head>
     
     <body>
-    @include("CSS-related.navbar")
       <div class="card">
       <div style="border-radius:200px; height:200px; width:200px; background: #FEDE98; margin:0 auto;">
         <i class="checkmark">✓</i>
@@ -53,5 +51,5 @@
         <br>
         <p>Project details have been saved.</p>
       </div>
-    </body>
-</html>
+@stop
+    

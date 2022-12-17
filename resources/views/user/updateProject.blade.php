@@ -1,199 +1,268 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        @include("CSS-related.header")
-        <style>
-            body {
-            background-color: #222222
-        }
+<style>
+    .button {
+        background-color: #4CAF50;
+        /* Green */
+        border: none;
+        color: white;
+        padding: 16px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        transition-duration: 0.4s;
+        cursor: pointer;
+        border-radius:20px;
+    }
 
-            input[type=text], select {
-            width: 60%;
-            padding: 12px 20px;
-         
-            display: inline-block;
-            
-            border-radius: 0px;
-            box-sizing: border-box;
-            }
+    .button1 {
+        background-color: white;
+        color: black;
+        border: 2px solid #40798C;
+    }
 
-            input[type=submit] {
-            width: 25%;
-            background-color: grey;
-            color: white;
-            padding: 14px 20px;
-            margin: 8px 0;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            }
+    .button1:hover {
+        background-color: #40798C;
+        color: white;
+    }
 
-            input[type=submit]:hover {
-            background-color: #5a96e6;
-            }
+    .button2 {
+        background-color: white;
+        color: black;
+        border: 2px solid red;
+    }
 
-            input[type=reset] {
-            width: 25%;
-            background-color: grey;
-            color: white;
-            padding: 14px 20px;
-            margin: 8px 0;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            }
+    .button2:hover {
+        background-color: red;
+        color: white;
+    }
 
-            input[type=reset]:hover {
-            background-color: red;
-            }
+    input[type=text] {
+        width: 100%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        box-sizing: border-box;
+        border: 3px solid #ccc;
+        -webkit-transition: 0.5s;
+        transition: 0.5s;
+        outline: none;
+        border-radius: 10px;
+    }
 
-            h3{
-                color: white;
-            }
-            p{
-                color: white;
-            }
+    input[type=text]:focus {
+        border: 3px solid #555;
+    }
 
-    
+    input[type=date] {
+        width: 100%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        box-sizing: border-box;
+        border: 3px solid #ccc;
+        -webkit-transition: 0.5s;
+        transition: 0.5s;
+        outline: none;
+        border-radius: 10px;
+    }
 
-          
-        </style>
-    </head>
+    input[type=number] {
+        width: 100%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        box-sizing: border-box;
+        border: 3px solid #ccc;
+        -webkit-transition: 0.5s;
+        transition: 0.5s;
+        outline: none;
+        border-radius: 10px;
+    }
 
-    <body>
-        @include("CSS-related.navbar")
+    select {
+        width: 100%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        box-sizing: border-box;
+        border: 3px solid #ccc;
+        -webkit-transition: 0.5s;
+        transition: 0.5s;
+        outline: none;
+        border-radius: 10px;
+    }
+</style>
+@extends("CSS-related.bootstrapTest")
 
-   
-        <div style="margin:0px 60px 60px 60px; background-color:#48527D; padding:10px;">
+
+
+@section('xxx')
+<br>
+
+<div class="card">
+    <div class="card-body">
+
+        <h3 style="font-weight:bold;color:#001F54;font-size:25px">---------------------------------- Student Info
+            ----------------------------------</H3>
+        <br>
+        <h3 style="display:inline;font-weight:bold;font-size:25px">Student Name: </h3>
+        <h2 style="display:inline;font-size:20px">{{$output->studentName}}</h2>
+        <br>
+        <br>
+        <h3 style="display:inline;font-weight:bold;font-size:25px">Student ID: </h3>
+        <h2 style="display:inline;font-size:20px">{{$output->studentID}}</h2>
+        <br>
+        <br>
+
+        <h3 style="font-weight:bold;color:#001F54;font-size:25px">---------------------------------- Lecturer Info
+            ----------------------------------</H3>
+
+        <br>
+
+        @foreach($sv as $sv)
+        @if($sv->id == $output->supervisorID)
+        <h3 style="display:inline;font-weight:bold;font-size:25px">Supervisor ID: </h3>
+        <h2 style="display:inline;font-size:20px">{{$output->supervisorID}}</h2>
+        <br>
+        <br>
+        <h3 style="display:inline;font-weight:bold;font-size:25px">Supervisor Name: </h3>
+        <h2 style="display:inline;font-size:20px">{{$sv->name}}</h2>
+        @endif
+        @endforeach
+
+        <br>
+        <br>
+
+        @foreach($ex1 as $ex1)
+        @if($ex1->id == $output->examiner1ID)
+        <h3 style="display:inline;font-weight:bold;font-size:25px">Examiner ID: </h3>
+        <h2 style="display:inline;font-size:20px">{{$output->examiner1ID}}</h2>
+        <br>
+        <br>
+        <h3 style="display:inline;font-weight:bold;font-size:25px">Examiner 1 Name: </h3>
+        <h2 style="display:inline;font-size:20px">{{$ex1->name}}</h2>
+        @endif
+        @endforeach
+
+
+        <br>
+        <br>
+
+        @foreach($ex2 as $ex2)
+        @if($ex2->id == $output->examiner2ID)
+        <h3 style="display:inline;font-weight:bold;font-size:25px">Examiner 2 ID: </h3>
+        <h2 style="display:inline;font-size:20px">{{$output->examiner2ID}}</h2>
+        <br>
+        <br>
+        <h3 style="display:inline;font-weight:bold;font-size:25px">Examiner 2 Name: </h3>
+        <h2 style="display:inline;font-size:20px">{{$ex2->name}}</h2>
+        @endif
+        @endforeach
+
+        <br>
+        <br>
+
+        <br>
+        <h3 style="font-weight:bold;color:#001F54;font-size:25px">---------------------------------- Project Info
+            ----------------------------------</H3>
+
+
+        <br>
+
         <form action="/edit" method="post">
             @csrf
-            <input type="hidden"  name="projectID" value ="{{$output->projectID}}">
-
-            <h3 style=" font-size:25px">Project Title</H3>
-            <input type="text"  name="pname" placeholder="Enter project title here" value ="{{$output->title}}" disabled>
-            <br>
-            <br>
-            <h3 style=" font-size:25px">Student Name</H3>
-            <input type="text"  name="studentname" placeholder="Enter project title here" value ="{{$output->studentName}}" disabled>
-            <br>
-            <br>
-            <h3 style=" font-size:25px">Student ID</H3>
-            <input type="text"  name="studentID" placeholder="Enter project title here" value ="{{$output->studentID}}" disabled>
-            
-            <br>
-            <br>
-            <h3 style=" font-size:25px">Supervisor</H3>
-            @foreach($sv as $sv)
-                    @if($sv->id == $output->supervisorID)
-                        <input type="text"  name="sv" placeholder="Enter project title here" value ="{{$output->supervisorID}}" disabled>
-                        <input type="text"  name="sv" placeholder="Enter project title here" value ="{{$sv->name}}" disabled>
-                    @endif
-            @endforeach
-               
+            <input type="hidden" name="projectID" value="{{$output->projectID}}">
+            <div>
+                <h3 style="display:inline;font-weight:bold;font-size:25px">Project ID </h3>
+                <input type="text" name="pname" placeholder="Enter project title here" value="{{$output->title}}">
+            </div>
 
             <br>
-                <br>
-                <h3 style=" font-size:25px">Examiner 1</H3>
-                @foreach($ex1 as $ex1)
-                    @if($ex1->id == $output->examiner1ID)
-                        <input type="text"  name="exa1" placeholder="Enter project title here" value ="{{$output->examiner1ID}}" disabled>
-                        <input type="text"  name="exa1" placeholder="Enter project title here" value ="{{$ex1->name}}" disabled>
-                    @endif
-                @endforeach
-              
+            <h3 style="display:inline;font-weight:bold;font-size:25px">Start Date</h3>
+            <input type="date" name="sdate" value="{{$output->start_date}}">
 
-                <br>
-                <br>
-                <h3 style=" font-size:25px">Examiner 2</H3>
-                @foreach($ex2 as $ex2)
-                    @if($ex2->id == $output->examiner2ID)
-                        <input type="text"  name="exa2"  value ="{{$output->examiner2ID}}" disabled>
-                        <input type="text"  name="exa2"  value ="{{$ex2->name}}" disabled>
-                    @endif
-                @endforeach
-                
-                <br>
+            <br>
+            <br>
 
-                <br>
-                <br>
-                <br>
-                
-               
-                <h3 style="color:grey; font-size:25px">----------------- For Supervisor Use Only -----------------</H3>
-                <br>
-                
-                <h3 style=" font-size:25px">Start Date</H3>
-                <input type="date" name="sdate" value ="{{$output->start_date}}">
+            <h3 style="display:inline;font-weight:bold;font-size:25px">End Date </h3>
+            <input type="date" name="edate" value="{{$output->end_date}}">
 
-                <br>
-                <br>
+            <br>
+            <br>
+            <h3 style="display:inline;font-weight:bold;font-size:25px">Project Duration</h3>
+            <br>
+            <input type="number" name="pduration" value="{{$output->duration}}">
 
-                <h3 style=" font-size:25px">End Date</H3>
-                <input type="date" name="edate" value ="{{$output->end_date}}">
-                
-                <br>
-                <br>
-                <h3 style=" font-size:25px">Duration</H3>
-                <input type="number" name="pduration" value ="{{$output->duration}}">
+            <br>
+            <br>
+            <h3 style="display:inline;font-weight:bold;font-size:25px">Project Status</h3>
+            <br> <br>
 
-                <br>
-                <br>
-                <p style=" font-size:25px">Project Status</p>
-                
-                <p>Current Status: </p>
-                        @if($output->projectStatus == 'On track')
-                        <p style="border-radius:10px; padding:2px; margin:10px;height: 30px;color:white;text-align:center;width: 10%; font-weight:bold; background-color: blue;">{{$output->projectStatus}}</p>
-                        @elseif($output->projectStatus == 'Delayed')
-                        <p style="border-radius:10px; padding:2px;margin:10px;height: 30px;color:white;text-align:center; width: 10%; font-weight:bold; background-color: orange;">{{$output->projectStatus}}</p>
-                        @elseif($output->projectStatus == 'Extended')
-                        <p style="border-radius:10px; padding:2px;margin:10px;height: 30px; color:white;text-align:center;width: 10%; font-weight:bold; background-color: red;">{{$output->projectStatus}}</p>
-                        @elseif($output->projectStatus == '')
-                        <p>-</p>
-                        @else
-                        <p style="border-radius:10px; padding:2px;margin:10px; height: 30px;color:white; text-align:center; width: 10%; font-weight:bold; background-color: green;">{{$output->projectStatus}}</p>
-                        @endif 
-                        <p style="color:red;">Choose to update project status:</p>    
-                <select  name="pstatus">
-                <option selected value="{{$output->projectStatus}}">{{$output->projectStatus}}</option> 
-                    <option value="On Track">On Track</option>
-                    <option value="Delayed">Delayed</option>
-                    <option value="Extended">Extended</option>
-                    <option value="Completed">Completed</option>
-                </select> 
+            <p style="pading:0px 0px 0px 0px;display:inline;">Current Status: </p>
+            @if($output->projectStatus == 'On track')
+            <p style="display:inline;color:blue;font-weight:bold;font-size:25px">
+                {{$output->projectStatus}}</p>
+            @elseif($output->projectStatus == 'Delayed')
+            <p style="display:inline;color:orange;font-weight:bold;font-size:25px">
+                {{$output->projectStatus}}</p>
+            @elseif($output->projectStatus == 'Extended')
+            <p style="display:inline;color:red;font-weight:bold;font-size:25px">
+                {{$output->projectStatus}}</p>
+            @elseif($output->projectStatus == '')
+            <p>-</p>
+            @else
+            <p style="display:inline;color:blue;font-weight:bold;font-size:25px">
+                {{$output->projectStatus}}</p>
+            @endif
+            <br><br>
+            <p style="color:red;">Choose to update project status:</p>
+            <select name="pstatus">
+                <option selected value="{{$output->projectStatus}}">{{$output->projectStatus}}</option>
+                <option value="On Track">On Track</option>
+                <option value="Delayed">Delayed</option>
+                <option value="Extended">Extended</option>
+                <option value="Completed">Completed</option>
+            </select>
 
-                <br>
-                <br>
-                <h3 style=" font-size:25px">Project Progress</H3>
-                <p>Current Progress: </p>
-                        @if($output->projectProgress == 'Final Report')
-                        <p style="border-radius:10px; padding:2px; margin:10px;height: 30px;color:white;text-align:center;width: 10%; font-weight:bold; background-color: blue;">{{$output->projectProgress}}</p>
-                        @elseif($output->projectProgress == 'Milestone 1')
-                        <p style="border-radius:10px; padding:2px;margin:10px;height: 30px;color:white;text-align:center; width: 10%; font-weight:bold; background-color: orange;">{{$output->projectProgress}}</p>
-                        @elseif($output->projectStatus == '')
-                        <p>-</p>
-                        @else($output->projectProgress == 'Milestone 1')
-                        <p style="border-radius:10px; padding:2px;margin:10px;height: 30px; color:white;text-align:center;width: 10%; font-weight:bold; background-color: green;">{{$output->projectProgress}}</p>
-                        @endif 
-                        <p style="color:red;">Choose to update project progress:</p> 
-                <select name="pprogress">
-                    <option selected value="{{$output->projectProgress}}">{{$output->projectProgress}}</option>    
-                    <option value="Milestone 1">Milestone 1</option>
-                    <option value="Milestone 2">Milestone 2</option>
-                    <option value="Final Report">Final Report</option>
-                </select> 
-                <br>
-                <br>
-                <br>
-                <br>
-                <center>
-                <input type="submit" value="Submit">
-                <input type="reset" value="Cancel">
-                </center>
-            </form>
-        </div>
-        
+            <br>
+            <br>
+            <br>
+            <h3 style="display:inline;font-weight:bold;font-size:25px">Project Progress</h3>
+            <br>
+            <br>
+            <p style="display:inline;pading:0px 0px 0px 0px;display:inline;">Current Progress: </p>
+            @if($output->projectProgress == 'Final Report')
+            <p style="display:inline;color:blue;font-weight:bold;font-size:25px">
+                {{$output->projectProgress}}</p>
+
+            @elseif($output->projectProgress == 'Milestone 1')
+            <p style="display:inline;color:green;font-weight:bold;font-size:25px">
+                {{$output->projectProgress}}</p>
+            @elseif($output->projectStatus == '')
+            <p>-</p>
+            @else($output->projectProgress == 'Milestone 1')
+            <p style="display:inline;color:orange;font-weight:bold;font-size:25px">
+                {{$output->projectProgress}}</p>
+            @endif
+            <br>
+            <br>
+            <p style="color:red;">Choose to update project progress:</p>
+            <select name="pprogress">
+                <option selected value="{{$output->projectProgress}}">{{$output->projectProgress}}</option>
+                <option value="Milestone 1">Milestone 1</option>
+                <option value="Milestone 2">Milestone 2</option>
+                <option value="Final Report">Final Report</option>
+            </select>
+            <br>
+            <br>
+            <br>
+            <br>
+            <center>
+            <button class="button button1" type="submit">Update</button>
+                <button class="button button2" type="reset">Cancel</button>
+            </center>
+        </form>
+    </div>
+</div>
 
 
+<br><br>
 
-    </body>
-</html>
+@stop

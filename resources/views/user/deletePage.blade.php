@@ -1,13 +1,15 @@
-<html>
-  <head>
-    <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:400,400i,700,900&display=swap" rel="stylesheet">
+@extends("CSS-related.bootstrapTest")
+@section('xxx')
+<link href="https://fonts.googleapis.com/css?family=Nunito+Sans:400,400i,700,900&display=swap" rel="stylesheet">
     <style>
+
+
       body {
         text-align: center;
         background: #EBF0F5;
         background-color: #222222
       }
-        h1 {
+      h1 {
           color: #88B04B;
           font-family: "Nunito Sans", "Helvetica Neue", sans-serif;
           font-weight: 900;
@@ -40,13 +42,14 @@
   </head>
     
     <body>
-    @include("CSS-related.navbar")
       <div class="card">
       <div style="border-radius:200px; height:200px; width:200px; background: #FEDE98; margin:0 auto;">
         <i class="checkmark">✓</i>
       </div>
+      <br>
         <h1>Success</h1> 
-        <p>Project have been deleted.</p>
+        <br>
+        <p>Project details have been deleted.</p>
       </div>
-    </body>
-</html>
+@stop
+    
