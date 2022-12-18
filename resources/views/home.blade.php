@@ -79,12 +79,5 @@
         </div>
         </div>
     </div>
-
-    
-
-
-
-
-    @include("CSS-related.footer")
 </body>
 </html>

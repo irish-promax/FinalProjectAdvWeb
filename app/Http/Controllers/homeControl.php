@@ -33,6 +33,7 @@ class homeControl extends Controller
     //Dropdown Function
     function adminregister()
     {
+        
         $data = user::all();
         $data1 = user::all();
         $data2 = user::all();
@@ -43,6 +44,7 @@ class homeControl extends Controller
     //Register Function
     function addData(Request $req)
     {
+       
         $member = new Project;
         //$member->cust_id = $req->custid;
         $member->title = $req->pname;
@@ -80,7 +82,7 @@ class homeControl extends Controller
             ->paginate(10);
         return view('user.viewproject', ['disdata' => $disdata]);
     }
-    
+
 
     //Display For Examiner Function
     function display4examiner()
@@ -90,7 +92,7 @@ class homeControl extends Controller
             $query->where('examiner1ID', '=', $userid)
                 ->orWhere('examiner2ID', '=', $userid);
         })->paginate(10);
-        return view('user.examineeproject',['disdata' => $disdata]);
+        return view('user.examineeproject', ['disdata' => $disdata]);
     }
 
     //Update Function
@@ -100,7 +102,7 @@ class homeControl extends Controller
         $ex2 = User::all();
         $sv = User::all();
         $output = Project::find($ID);
-        return view('user.updateProject',['output' => $output, 'ex1' => $ex1, 'ex2' => $ex2, 'sv' => $sv,]);
+        return view('user.updateProject', ['output' => $output, 'ex1' => $ex1, 'ex2' => $ex2, 'sv' => $sv,]);
     }
 
     //Update Function
@@ -113,7 +115,7 @@ class homeControl extends Controller
         $data->projectStatus = $req->pstatus;
         $data->projectProgress = $req->pprogress;
         $data->title = $req->pname;
-        
+
         $data->save();
         return view('user.donePage');
     }
