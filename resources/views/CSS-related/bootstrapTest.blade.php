@@ -85,13 +85,14 @@
                         <span class="menu-title">Supervisee</span>
                     </a>
                 </li>
-
+                
                 <li class="nav-item">
                     <a class="nav-link" href="/viewprojectexaminee">
                         <i class="menu-icon mdi mdi-account-circle-outline"></i>
                         <span class="menu-title">Examinee</span>
                     </a>
                 </li>
+
             </ul>
         </nav>
 

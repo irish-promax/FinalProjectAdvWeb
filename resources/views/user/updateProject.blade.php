@@ -99,8 +99,7 @@
 <div class="card">
     <div class="card-body">
 
-        <h3 style="font-weight:bold;color:#001F54;font-size:25px">---------------------------------- Student Info
-            ----------------------------------</H3>
+        <h3 style="font-weight:bold;color:#001F54;font-size:25px">---------------------------------- Student Info ----------------------------------</H3>
         <br>
         <h3 style="display:inline;font-weight:bold;font-size:25px">Student Name: </h3>
         <h2 style="display:inline;font-size:20px">{{$output->studentName}}</h2>
@@ -111,8 +110,7 @@
         <br>
         <br>
 
-        <h3 style="font-weight:bold;color:#001F54;font-size:25px">---------------------------------- Lecturer Info
-            ----------------------------------</H3>
+        <h3 style="font-weight:bold;color:#001F54;font-size:25px">---------------------------------- Lecturer Info ----------------------------------</H3>
 
         <br>
 
@@ -160,8 +158,7 @@
         <br>
 
         <br>
-        <h3 style="font-weight:bold;color:#001F54;font-size:25px">---------------------------------- Project Info
-            ----------------------------------</H3>
+        <h3 style="font-weight:bold;color:#001F54;font-size:25px">---------------------------------- Project Info ----------------------------------</H3>
 
 
         <br>
@@ -170,7 +167,7 @@
             @csrf
             <input type="hidden" name="projectID" value="{{$output->projectID}}">
             <div>
-                <h3 style="display:inline;font-weight:bold;font-size:25px">Project ID </h3>
+                <h3 style="display:inline;font-weight:bold;font-size:25px">Project Name </h3>
                 <input type="text" name="pname" placeholder="Enter project title here" value="{{$output->title}}">
             </div>
 

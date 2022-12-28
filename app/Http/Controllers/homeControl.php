@@ -70,7 +70,7 @@ class homeControl extends Controller
     //Display All Function
     function display4all()
     {
-        $disdata = Project::paginate(10);
+        $disdata = Project::paginate(4);
         return view('admin.viewallproject', ['disdata' => $disdata]);
     }
 

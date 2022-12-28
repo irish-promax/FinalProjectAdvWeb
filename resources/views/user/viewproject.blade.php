@@ -8,9 +8,8 @@
             <table class="table table-bordered">
                 <thead>
                     <tr align="center">
+                    <th>Student Information</th>
                         <th>Title</th>
-                        <th>Student ID</th>
-                        <th>Student Name</th>
                         <th>Project Status</th>
                         <th>Project Progress</th>
                         <th>Action</th>
@@ -20,9 +19,10 @@
                 <tbody>
                     @foreach($disdata as $data)
                     <tr align="center">
+                        
+                        <td><h2 style="font-weight:bold;">{{$data->studentName}}</h2><br> <h2 style="font-weight:bold; color:grey;">{{$data->studentID}}</h2></td>
+                       
                         <td>{{$data->title}}</td>
-                        <td>{{$data->studentID}}</td>
-                        <td>{{$data->studentName}}</td>
 
                         @if($data->projectStatus == 'On Track')
                         <td class="table-primary">
